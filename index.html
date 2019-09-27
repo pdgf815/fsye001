@@ -47,13 +47,13 @@ function DeviceOrientationHandler(event){
          if(gamma>0){
          	div.innerHTML="你把手机往右转了";
          	var timer=setInterval(function(){
-         		divMove.style.left= divMove.offestLeft+10 + "px";
+         		divMove.style.left= divMove.offsetLeft+10 + "px";
          	},30)
          	
          }else if(gamma<0){
          	div.innerHTML="你把手机往左转了";
          	setInterval(function(){
-         		divMove.style.left= divMove.offestLeft-10 + "px";
+         		divMove.style.left= divMove.offsetLeft-10 + "px";
          	},30)
          }else if(gamma==0){
          	clearInterval(timer);
