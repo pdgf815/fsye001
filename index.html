@@ -3,18 +3,34 @@
 <head>
 	<title>11</title>
 	<style type="text/css">
-		div{
+	div{
 		position: relative;
 		top: 100px;
 		left: 100px;
 		font-size: 100px;
 	}
+	.move{
+		position: relative;
+		top: 200px;
+		left: 200px;
+		background-color: red;
+		width: 150px;
+		height: 150px;
+	}
 </style>
 </head>
 <body>
+
+
 	<div class="div1">
 		来来来，再来三杯！
+		
 	</div>
+	<div class="move">
+			
+
+		</div>
+
 	<script type="text/javascript">
 		//add deviceorientation event listener
 if(window.DeviceOrientationEvent){
@@ -23,14 +39,15 @@ if(window.DeviceOrientationEvent){
     alert("您的浏览器不支持DeviceOrientation");
 }
 var div=document.querySelector("div");
+	divMove=document.querySelector(".move");
 function DeviceOrientationHandler(event){
         var alpha = event.alpha,
             beta = event.beta,
             gamma = event.gamma;
          if(gamma>0){
-         	div.innerHTML = "往右转了";
+         	divMove.style.left+= "10px";
          }else if(gamma<0){
-         	div.innerHTML = "往左转了";
+         	divMove.style.left-= "10px";
          }else if(gamma==0){
          	div.innerHTML = "你也没转啊";
          }else{
