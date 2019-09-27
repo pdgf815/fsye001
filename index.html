@@ -45,12 +45,14 @@ function DeviceOrientationHandler(event){
             beta = event.beta,
             gamma = event.gamma;
          if(gamma>0){
+		clearInterval(timer);
          	div.innerHTML="你把手机往右转了";
          	var timer=setInterval(function(){
          		divMove.style.left= divMove.offsetLeft+1 + "px";
          	},30)
          	
          }else if(gamma<0){
+		clearInterval(timer);
          	div.innerHTML="你把手机往左转了";
          	setInterval(function(){
          		divMove.style.left= divMove.offsetLeft-1 + "px";
