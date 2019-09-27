@@ -1,99 +1,45 @@
-    
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>
-		风声月耳
-	</title>
-	<style type="text/css">
-		h1{font-size: 100px;
-			position: absolute;
-			left:270px;
-			top: 150px;
-		}
-		p1{
-			font-size: 50px;
-			position: absolute;
-			left:200px;
-			top: 400px;
-		}
-		p2{
-			font-size: 50px;
-			position: absolute;
-			left:200px;
-			top: 500px;
-		}
-		p3{
-			font-size: 50px;
-			position: absolute;
-			left:200px;
-			top: 600px;
-		}
-		p4{
-			font-size: 50px;
-			position: absolute;
-			left:200px;
-			top: 700px;
-		}
-		</style>
-		
-
+	<title>11</title>
 </head>
 <body>
-	<div>
-	<h1>望月怀远</h1>
-	<div>
-	<p1>海上生明月，天涯共此时。</p1>
-	<p2>情人怨遥夜，竟夕起相思。</p2>
-	<p3>灭烛怜光满，披衣觉露滋。</p3>
-	<p4>不堪盈手赠，还寝梦佳期。</p4>
-	</div>
-	
-	</div>
 	<script type="text/javascript">
-		var binggo=false;
-		function guess(){
-			if (binggo) {
-				return;
-			}
-		var question=prompt("1");
-		if(question=="1"){
-			alert("3");
-			binggo=true;
-		}
-		else if(question=="2"){
-			alert("4");
-		}
-	
-		else if(question=="5"){
-			alert("6");
-		}
-		else {
-			alert("9");
-		}
-	}
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-	guess();
-
+		//add deviceorientation event listener
+if(window.DeviceOrientationEvent){
+    window.addEventListener('deviceorientation',DeviceOrientationHandler,false);
+}else{
+    alert("您的浏览器不支持DeviceOrientation");
+}
+function DeviceOrientationHandler(event){
+        var alpha = event.alpha,
+            beta = event.beta,
+            gamma = event.gamma;
+         if(alpha != null || beta != null || gamma != null){
+            dataContainerOrientation.innerHTML = "alpha:" + alpha + "<br />beta:" + beta + "<br />gamma:" + gamma;
+            //判断屏幕方向
+            var html = "";
+            if( Math.abs(gamma) < GAMMA_MIN && Math.abs(beta) > BETA_MAX ){
+                html = "屏幕方向：Portrait";
+            }
+            
+            if( Math.abs(beta) < BETA_MIN && Math.abs(gamma) > GAMMA_MAX ){
+                html = "屏幕方向：Landscape";
+            }
+            
+            var gamma_html = "";
+            if( gamma > 0 ){
+                gamma_html = "向右倾斜";
+            }else{
+                gamma_html = "向左倾斜";
+            }
+            html += "<br />"+gamma_html
+            stage.innerHTML = html;
+        }else{
+            dataContainerOrientation.innerHTML = "当前浏览器不支持DeviceOrientation";
+        }
+}
 	</script>
 </body>
 </html>
