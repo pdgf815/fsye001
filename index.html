@@ -20,18 +20,18 @@ function DeviceOrientationHandler(event){
             beta = event.beta,
             gamma = event.gamma;
          if(gamma>0){
-         	div.innerHTML="往右转了";
-         }else if{
-         	div.innerHTML="往左转了";
+         	div.innerHTML = "往右转了";
+         }else if(gamma<0){
+         	div.innerHTML = "往左转了";
+         }else if(gamma==0){
+         	div.innerHTML = "你也没转啊";
          }else{
-         	div.innerHTML="你往哪转呢";
+         	div.innerHTML = "你往哪转呢";
          }
             
           
-        }else{
-            dataContainerOrientation.innerHTML = "当前浏览器不支持DeviceOrientation";
         }
-}
+
 	</script>
 </body>
 </html>
