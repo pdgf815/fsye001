@@ -46,12 +46,12 @@ function DeviceOrientationHandler(event){
             gamma = event.gamma;
          if(gamma>0){
          	var timer=setInterval(function(){
-         		divMove.style.left+= "10px";
+         		divMove.style.left= divMove.offestLeft+10 + "px";
          	},30)
          	
          }else if(gamma<0){
          	setInterval(function(){
-         		divMove.style.left-= "10px";
+         		divMove.style.left= divMove.offestLeft-10 + "px";
          	},30)
          }else if(gamma==0){
          	clearInterval(timer);
