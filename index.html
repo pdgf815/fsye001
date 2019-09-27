@@ -20,11 +20,11 @@ function DeviceOrientationHandler(event){
             dataContainerOrientation.innerHTML = "alpha:" + alpha + "<br />beta:" + beta + "<br />gamma:" + gamma;
             //判断屏幕方向
             var html = "";
-            if( Math.abs(gamma) < GAMMA_MIN && Math.abs(beta) > BETA_MAX ){
+            if( Math.abs(gamma) < -90 && Math.abs(beta) > 180 ){
                 html = "屏幕方向：Portrait";
             }
             
-            if( Math.abs(beta) < BETA_MIN && Math.abs(gamma) > GAMMA_MAX ){
+            if( Math.abs(beta) < -180 && Math.abs(gamma) > 90 ){
                 html = "屏幕方向：Landscape";
             }
             
