@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>11</title>
+</head>
+<body>
+<div>请输入想要找的物品名：<input type="text" name="" class="input"></div>
+<div>该物品在：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="" class="output"></div>
+</br>
+<button class="chaxun">查询</button>
+<button class="tianjia">添加</button>
+<script type="text/javascript">
+	var input=document.querySelector(".input");
+	var output=document.querySelector(".output");
+	var button1=document.querySelector(".chaxun");
+	var button2=document.querySelector(".tianjia");
+	var arr1=["毛巾","书","充电器"];
+	var arr2=["立柜里","书架上","沙发"];
+	
+	
+	function sf(){
+		for( var i=0;i<arr1.length;i++){
+		if(input.value==arr1[i]){
+		   output.value=arr2[i];
+		 }
+		}
+
+	}
+		 function fn(){
+		
+		 	if(sf()){
+		 		return;
+
+		 	}
+		 	else{
+				alert("找不到该物品");
+				return ;
+			}
+		 	
+		
+	}
+
+			
+	
+	button1.addEventListener("click",function(){
+		fn();
+	},false);
+	button2.addEventListener("click",function(){
+		if(input.value!=null&&output.value!=null){
+		arr1.push(input.value);
+		arr2.push(output.value);
+		input.value="";
+		output.value="";
+		alert("添加成功");
+		}
+	})
+	
+	
+	
+	
+	
+
+
+
+</script>
+</body>
+</html>
